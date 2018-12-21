@@ -3,8 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import MuseUI from 'muse-ui';
-import 'muse-ui/dist/muse-ui.css';
+// import MuseUI from 'muse-ui';
+// import 'muse-ui/dist/muse-ui.css';
 import "typeface-roboto";
 
 import Loading from 'muse-ui-loading'
@@ -46,7 +46,7 @@ Vue.use(new VueSocketio({
 Vue.use(NProgress,config1);
 Vue.use(Chat)
 Vue.use(thor)
-Vue.use(MuseUI)
+// Vue.use(MuseUI)
 Vue.use(Loading)
 Vue.use(Message)
 Vue.use(Toast, config)
