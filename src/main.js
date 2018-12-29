@@ -6,8 +6,8 @@ import store from './store'
 // import MuseUI from 'muse-ui';
 // import 'muse-ui/dist/muse-ui.css';
 import "typeface-roboto";
-
-import Loading from 'muse-ui-loading'
+// import 'muse-ui-loading/dist/muse-ui-loading.css';
+// import Loading from 'muse-ui-loading'
 import Toast from 'muse-ui-toast';
 import Message from 'muse-ui-message';
 import NProgress from 'muse-ui-progress';
@@ -19,6 +19,8 @@ import 'thor-x/dist/index.css'
 import VueSocketio from 'vue-socket.io';
 
 import Chat from 'vue-beautiful-chat'
+
+
 // axios.defaults.baseURL= "https://localhost:443/hid/";
 axios.defaults.baseURL= "https://www.ggbeng.xyz/hid/";
 const config = {
@@ -34,6 +36,8 @@ const config1 = {
 	position: "absolute"
 }
 Vue.config.productionTip = false
+
+
 Vue.use(new VueSocketio({
     // debug: true,
     connection: 'https://www.ggbeng.xyz'
@@ -47,7 +51,7 @@ Vue.use(NProgress,config1);
 Vue.use(Chat)
 Vue.use(thor)
 // Vue.use(MuseUI)
-Vue.use(Loading)
+// Vue.use(Loading)
 Vue.use(Message)
 Vue.use(Toast, config)
 Vue.prototype.$http = axios
