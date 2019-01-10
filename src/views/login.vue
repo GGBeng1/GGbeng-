@@ -13,7 +13,6 @@
 			<mu-form-item>
 				<mu-button color="primary" @click="submit">登录</mu-button>
 				<mu-button @click="register">注册</mu-button>
-		        <mu-icon size="36" value="accessibility"></mu-icon>
 			</mu-form-item>
 		</mu-form>
 	</mu-container>

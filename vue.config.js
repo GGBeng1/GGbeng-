@@ -20,6 +20,7 @@ module.exports = {
             }
         }
     },
+    assetsDir:'static',
     pages: {
         index: {
             // page 的入口
