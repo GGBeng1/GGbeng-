@@ -3,7 +3,7 @@
     <div class="header">
       <p class="title">GGbeng-UI</p>
       <p class="text1">基于vue.js的多端高质量UI组件</p>
-      <p class="text1">~任何平凡的梦想，经过努力都会发出自己喜欢的光芒~</p>
+      <p class="text1">~PC端免登陆!~</p>
       <div class="list">
         <a href="https://ggbeng1.github.io/GGbengUI/">指南</a>
         <a href="https://ggbeng1.github.io/GGbengUI/baseComponents/">组件</a>
@@ -211,7 +211,7 @@ export default {
       this.connected = true;
     },
     messages: function(data) {
-      console.log(data);
+      // console.log(data);
       this.sendMessage(data);
     }
   },
