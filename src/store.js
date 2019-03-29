@@ -5,19 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-		//leftbar
-		nackName: '',
-		showLogin: true
+    nackName: '',
+    showLogin: true
   },
   mutations: {
-		changeNackName(state,name) {
-			state.nackName = name;
-			state.showLogin = false;
-		},
-		loginOut(state,name) {
-			state.nackName = "";
-			state.showLogin = true;
-		}
+    changeNackName (state, name) {
+      state.nackName = name;
+      state.showLogin = false;
+    },
+    loginOut (state) {
+      state.nackName = "";
+      state.showLogin = true;
+    }
   },
   actions: {
 

@@ -101,7 +101,7 @@ export default {
                     data: data
                 }, true)
             } else if (data.file) {
-                let s = this.toBuffer(data.file);
+                // let s = this.toBuffer(data.file);
                 // console.log(s)
             }
         },
