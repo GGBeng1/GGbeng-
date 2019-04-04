@@ -60,7 +60,6 @@ export default {
   },
   methods: {
     submit () {
-      // this.loading = true;
       this.$refs.form.validate().then((result) => {
         if (result) {
           this.$progress.start();
