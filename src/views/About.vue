@@ -56,23 +56,7 @@
             </mu-card-actions>
           </mu-card>
         </mu-container>
-        <beautiful-chat
-          :participants="participants"
-          :titleImageUrl="titleImageUrl"
-          :onMessageWasSent="onMessageWasSent"
-          :messageList="messageList"
-          :newMessagesCount="newMessagesCount"
-          :isOpen="isChatOpen"
-          :close="closeChat"
-          :open="openChat"
-          :showEmoji="true"
-          :showFile="true"
-          :showTypingIndicator="showTypingIndicator"
-          :colors="colors"
-          :alwaysScrollToBottom="alwaysScrollToBottom"
-          :messageStyling="messageStyling"
-          :placeholder="placeholder"
-        />
+        <beautiful-chat :participants="participants" :titleImageUrl="titleImageUrl" :onMessageWasSent="onMessageWasSent" :messageList="messageList" :newMessagesCount="newMessagesCount" :isOpen="isChatOpen" :close="closeChat" :open="openChat" :showEmoji="true" :showFile="true" :showTypingIndicator="showTypingIndicator" :colors="colors" :alwaysScrollToBottom="alwaysScrollToBottom" :messageStyling="messageStyling" :placeholder="placeholder" />
       </div>
     </mu-dialog>
   </div>
@@ -81,10 +65,17 @@
 import ball from "../components/tools/threeball.vue";
 import "../../public/icon/iconfont.js";
 export default {
+  metaInfo: {
+    title: 'GGbeng-UI', // set a title
+    meta: [{                 // set meta
+      name: 'GGbeng-UI',
+      content: 'ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng'
+    }]
+  },
   components: {
     ball
   },
-  data() {
+  data () {
     return {
       placeholder: "写点啥，老铁",
       connected: false,
@@ -93,15 +84,15 @@ export default {
         {
           id: "user1",
           name: "GGbeng",
-          imageUrl: "https://www.ggbeng.xyz/g.png"
+          imageUrl: "http://118.24.254.100/g.png"
         },
         {
           id: "me",
           name: "You",
-          imageUrl: "https://www.ggbeng.xyz/you.png"
+          imageUrl: "http://118.24.254.100/you.png"
         }
       ], // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
-      titleImageUrl: "https://www.ggbeng.xyz/ggbeng.png",
+      titleImageUrl: "http://118.24.254.100/ggbeng.png",
       messageList: [
         // { type: 'text', author: `me`, data: { text: `Say yes!` } },
       ], // the list of the messages to show, can be paginated and adjusted dynamically
@@ -138,13 +129,13 @@ export default {
     };
   },
   methods: {
-    showLogin() {
+    showLogin () {
       this.openFullscreen = true;
     },
-    closeFullscreenDialog() {
+    closeFullscreenDialog () {
       this.openFullscreen = false;
     },
-    sendMessage(data) {
+    sendMessage (data) {
       // console.log(data)
       this.showTypingIndicator = "";
       if (data.text) {
@@ -171,7 +162,7 @@ export default {
         // console.log(s)
       }
     },
-    onMessageWasSent(message, isSend) {
+    onMessageWasSent (message, isSend) {
       // called when the user sends a message
       // console.log(message)
       // message.author = "user2"
@@ -184,10 +175,10 @@ export default {
       }
       // console.log(this.messageList)
     },
-    load(message) {
+    load (message) {
       this.$socket.emit("messages", message);
     },
-    toBuffer(ab) {
+    toBuffer (ab) {
       let buf = new Buffer(ab.byteLength);
       let view = new Uint8Array(ab);
       for (let i = 0; i < buf.length; ++i) {
@@ -195,27 +186,27 @@ export default {
       }
       return buf;
     },
-    openChat() {
+    openChat () {
       // called when the user clicks on the fab button to open the chat
       this.isChatOpen = true;
       this.newMessagesCount = 0;
     },
-    closeChat() {
+    closeChat () {
       // called when the user clicks on the botton to close the chat
       this.isChatOpen = false;
     }
   },
   sockets: {
-    connect: function() {
+    connect: function () {
       console.log("socket connected");
       this.connected = true;
     },
-    messages: function(data) {
+    messages: function (data) {
       // console.log(data);
       this.sendMessage(data);
     }
   },
-  mounted() {
+  mounted () {
     this.showTypingIndicator = "1";
     let contents = document.getElementById("contents");
     contents.style.height = window.innerHeight + "px";
@@ -230,13 +221,13 @@ export default {
       this.load(obj);
     }, 3000);
   },
-  created() {
+  created () {
     this.$on("zip", () => {
       console.log("zip");
     });
   },
   watch: {
-    isChatOpen(val) {
+    isChatOpen (val) {
       if (val) {
         this.showTypingIndicator = "1";
         setTimeout(() => {
