@@ -11,6 +11,7 @@
                 <a href="https://github.com/GGBeng1/GGbengUI">
 					GitHub
 				</a>
+                <a href="http://info.ggbeng.site">博客</a>
             </div>
         </div>
         <div class="content" id='content'>

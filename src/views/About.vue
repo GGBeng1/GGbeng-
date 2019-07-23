@@ -7,24 +7,35 @@
       <div class="list">
         <a href="https://ggbeng1.github.io/GGbengUI/">指南</a>
         <a href="https://ggbeng1.github.io/GGbengUI/baseComponents/">组件</a>
-        <a href="https://ggbeng1.github.io/GGbengUI/baseComponents/base/updata.html">更新日志</a>
+        <a
+          href="https://ggbeng1.github.io/GGbengUI/baseComponents/base/updata.html"
+          >更新日志</a
+        >
         <a href="https://github.com/GGBeng1/GGbengUI">
           <svg class="icon" aria-hidden="true" style="height: 17px;width:17px">
-            <use xlink:href="#icon-github-fill"></use>
-          </svg>GitHub
+            <use xlink:href="#icon-github-fill"></use></svg
+          >GitHub
         </a>
         <a href="#" @click="showLogin">bug提交</a>
+        <a href="http://info.ggbeng.site">博客</a>
       </div>
     </div>
     <div class="content" id="contents">
       <ball></ball>
     </div>
-    <mu-dialog width="360" transition="slide-bottom" fullscreen :open.sync="openFullscreen">
+    <mu-dialog
+      width="360"
+      transition="slide-bottom"
+      fullscreen
+      :open.sync="openFullscreen"
+    >
       <mu-appbar color="primary" title="GGbeng-UI BUG提交">
         <mu-button slot="left" icon @click="closeFullscreenDialog">
           <mu-icon value="close"></mu-icon>
         </mu-button>
-        <mu-button slot="right" flat @click="closeFullscreenDialog">Done</mu-button>
+        <mu-button slot="right" flat @click="closeFullscreenDialog"
+          >Done</mu-button
+        >
       </mu-appbar>
       <div style="padding: 24px;padding-top: 120px">
         <mu-container>
@@ -32,22 +43,27 @@
             <mu-card-header title="GGbeng" sub-title="cmz">
               <mu-avatar slot="avatar">G</mu-avatar>
             </mu-card-header>
-            <mu-card-title title="感谢您选择GGbeng-ui" sub-title="愿您开发一切顺利➡_➡"></mu-card-title>
-            <mu-card-text>ggbeng-ui刚刚起步，有许多不完善的地方，希望开发者多多提出宝贵的意见。
-              <br>ggbeng-ui近期会有大动作，pc端和移动端的分离，小程序端的开发，更多的组件。
-              <br>自始至终，ggbeng-UI的开发都是我一个人，难免有些纰漏，希望开发者面对BUG不要紧张，只需提交即可，我会在最快的时间内回复。
-              <br>
+            <mu-card-title
+              title="感谢您选择GGbeng-ui"
+              sub-title="愿您开发一切顺利➡_➡"
+            ></mu-card-title>
+            <mu-card-text
+              >ggbeng-ui刚刚起步，有许多不完善的地方，希望开发者多多提出宝贵的意见。
+              <br />ggbeng-ui近期会有大动作，pc端和移动端的分离，小程序端的开发，更多的组件。
+              <br />自始至终，ggbeng-UI的开发都是我一个人，难免有些纰漏，希望开发者面对BUG不要紧张，只需提交即可，我会在最快的时间内回复。
+              <br />
               <span style="color:orangered">提交规范：</span>
-              <br>
+              <br />
               <span style="color:orangered">
                 bug场景+组件名+相应部分源码/或者上传
                 <span style="color: #000;">.zip</span>文件不大于
                 <span style="color: #000;">800kb</span>！
               </span>
-              <br>
+              <br />
               <span style="color:orangered">
                 上传文件务必压缩为
-                <span style="color: #000;">.zip</span>的文件，将场景及报错截图，源码放入即可
+                <span style="color: #000;">.zip</span
+                >的文件，将场景及报错截图，源码放入即可
               </span>
             </mu-card-text>
             <mu-card-actions>
@@ -56,7 +72,23 @@
             </mu-card-actions>
           </mu-card>
         </mu-container>
-        <beautiful-chat :participants="participants" :titleImageUrl="titleImageUrl" :onMessageWasSent="onMessageWasSent" :messageList="messageList" :newMessagesCount="newMessagesCount" :isOpen="isChatOpen" :close="closeChat" :open="openChat" :showEmoji="true" :showFile="true" :showTypingIndicator="showTypingIndicator" :colors="colors" :alwaysScrollToBottom="alwaysScrollToBottom" :messageStyling="messageStyling" :placeholder="placeholder" />
+        <beautiful-chat
+          :participants="participants"
+          :titleImageUrl="titleImageUrl"
+          :onMessageWasSent="onMessageWasSent"
+          :messageList="messageList"
+          :newMessagesCount="newMessagesCount"
+          :isOpen="isChatOpen"
+          :close="closeChat"
+          :open="openChat"
+          :showEmoji="true"
+          :showFile="true"
+          :showTypingIndicator="showTypingIndicator"
+          :colors="colors"
+          :alwaysScrollToBottom="alwaysScrollToBottom"
+          :messageStyling="messageStyling"
+          :placeholder="placeholder"
+        />
       </div>
     </mu-dialog>
   </div>
@@ -66,16 +98,20 @@ import ball from "../components/tools/threeball.vue";
 import "../../public/icon/iconfont.js";
 export default {
   metaInfo: {
-    title: 'GGbeng-UI', // set a title
-    meta: [{                 // set meta
-      name: 'GGbeng-UI',
-      content: 'ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng'
-    }]
+    title: "GGbeng-UI", // set a title
+    meta: [
+      {
+        // set meta
+        name: "GGbeng-UI",
+        content:
+          "ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng"
+      }
+    ]
   },
   components: {
     ball
   },
-  data () {
+  data() {
     return {
       placeholder: "写点啥，老铁",
       connected: false,
@@ -129,13 +165,13 @@ export default {
     };
   },
   methods: {
-    showLogin () {
+    showLogin() {
       this.openFullscreen = true;
     },
-    closeFullscreenDialog () {
+    closeFullscreenDialog() {
       this.openFullscreen = false;
     },
-    sendMessage (data) {
+    sendMessage(data) {
       // console.log(data)
       this.showTypingIndicator = "";
       if (data.text) {
@@ -162,7 +198,7 @@ export default {
         // console.log(s)
       }
     },
-    onMessageWasSent (message, isSend) {
+    onMessageWasSent(message, isSend) {
       // called when the user sends a message
       // console.log(message)
       // message.author = "user2"
@@ -175,10 +211,10 @@ export default {
       }
       // console.log(this.messageList)
     },
-    load (message) {
+    load(message) {
       this.$socket.emit("messages", message);
     },
-    toBuffer (ab) {
+    toBuffer(ab) {
       let buf = new Buffer(ab.byteLength);
       let view = new Uint8Array(ab);
       for (let i = 0; i < buf.length; ++i) {
@@ -186,27 +222,27 @@ export default {
       }
       return buf;
     },
-    openChat () {
+    openChat() {
       // called when the user clicks on the fab button to open the chat
       this.isChatOpen = true;
       this.newMessagesCount = 0;
     },
-    closeChat () {
+    closeChat() {
       // called when the user clicks on the botton to close the chat
       this.isChatOpen = false;
     }
   },
   sockets: {
-    connect: function () {
+    connect: function() {
       console.log("socket connected");
       this.connected = true;
     },
-    messages: function (data) {
+    messages: function(data) {
       // console.log(data);
       this.sendMessage(data);
     }
   },
-  mounted () {
+  mounted() {
     this.showTypingIndicator = "1";
     let contents = document.getElementById("contents");
     contents.style.height = window.innerHeight + "px";
@@ -221,13 +257,13 @@ export default {
       this.load(obj);
     }, 3000);
   },
-  created () {
+  created() {
     this.$on("zip", () => {
       console.log("zip");
     });
   },
   watch: {
-    isChatOpen (val) {
+    isChatOpen(val) {
       if (val) {
         this.showTypingIndicator = "1";
         setTimeout(() => {
