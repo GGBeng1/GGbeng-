@@ -1,17 +1,17 @@
-var client = require("scp2");
+var client = require('scp2')
 client.scp(
-  "./dist",
+  './dist',
   {
-    host: "185.251.45.12",
-    username: "root",
-    password: "Cao5211314",
-    path: "/www/wwwroot/ggbeng/vuepage/static"
+    host: '185.251.249.13',
+    username: 'root',
+    password: 'Cao5211314',
+    path: '/www/wwwroot/ggbeng'
   },
   function(err) {
     if (err) {
-      console.log(err);
+      console.log(err)
     } else {
-      console.log("上传成功");
+      console.log('上传成功')
     }
   }
-);
+)

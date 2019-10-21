@@ -18,6 +18,8 @@
         </a>
         <a href="#" @click="showLogin">bug提交</a>
         <a href="http://info.ggbeng.site">博客</a>
+        <a href="#" @click="showQrCodeDialog">二维码转换</a>
+        <!-- <router-link to="/qrCode" tag="a">二维码转换</router-link> -->
       </div>
     </div>
     <div class="content" id="contents">
@@ -91,11 +93,28 @@
         />
       </div>
     </mu-dialog>
+    <mu-dialog
+      width="360"
+      transition="slide-bottom"
+      fullscreen
+      :open.sync="showQrCode"
+    >
+      <mu-appbar color="primary" title="GGbeng-UI Qr转换">
+        <mu-button slot="left" icon @click="closeFullscreenDialog">
+          <mu-icon value="close"></mu-icon>
+        </mu-button>
+        <mu-button slot="right" flat @click="closeFullscreenDialog"
+          >Done</mu-button
+        >
+      </mu-appbar>
+      <qrcode></qrcode>
+    </mu-dialog>
   </div>
 </template>
 <script>
 import ball from "../components/tools/threeball.vue";
 import "../../public/icon/iconfont.js";
+import qrcode from "./qrCode";
 export default {
   metaInfo: {
     title: "GGbeng-UI", // set a title
@@ -109,10 +128,12 @@ export default {
     ]
   },
   components: {
-    ball
+    ball,
+    qrcode
   },
   data() {
     return {
+      showQrCode: false,
       placeholder: "写点啥，老铁",
       connected: false,
       openFullscreen: false,
@@ -120,15 +141,15 @@ export default {
         {
           id: "user1",
           name: "GGbeng",
-          imageUrl: "http://118.24.254.100/g.png"
+          imageUrl: "http://119.3.251.24/g.png"
         },
         {
           id: "me",
           name: "You",
-          imageUrl: "http://118.24.254.100/you.png"
+          imageUrl: "http://119.3.251.24/you.png"
         }
       ], // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
-      titleImageUrl: "http://118.24.254.100/ggbeng.png",
+      titleImageUrl: "http://119.3.251.24/ggbeng.png",
       messageList: [
         // { type: 'text', author: `me`, data: { text: `Say yes!` } },
       ], // the list of the messages to show, can be paginated and adjusted dynamically
@@ -168,8 +189,12 @@ export default {
     showLogin() {
       this.openFullscreen = true;
     },
+    showQrCodeDialog() {
+      this.showQrCode = true;
+    },
     closeFullscreenDialog() {
       this.openFullscreen = false;
+      this.showQrCode = false;
     },
     sendMessage(data) {
       // console.log(data)

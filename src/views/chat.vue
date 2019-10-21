@@ -66,7 +66,7 @@ export default {
         {
           id: "user1",
           name: "GGbeng",
-          imageUrl: "http://118.24.254.100/g.png"
+          imageUrl: "http://119.3.251.24/g.png"
         }
         // {
         //  id: 'me',
@@ -74,7 +74,7 @@ export default {
         //  imageUrl: 'http://www.ggbeng.site/you.png'
         // }
       ], // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
-      titleImageUrl: "http://118.24.254.100/ggbeng.png",
+      titleImageUrl: "http://119.3.251.24/ggbeng.png",
       messageList: [
         // { type: 'text', author: `me`, data: { text: `Say yes!` } },
       ], // the list of the messages to show, can be paginated and adjusted dynamically
