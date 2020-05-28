@@ -1,48 +1,49 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import Vue from "vue"
+import App from "./App.vue"
+import router from "./router"
+import store from "./store"
 
-// import MuseUI from 'muse-ui';
-// import 'muse-ui/dist/muse-ui.css';
-import 'typeface-roboto'
+import MuseUI from "muse-ui"
+import "muse-ui/dist/muse-ui.css"
+import "typeface-roboto"
 // import 'muse-ui-loading/dist/muse-ui-loading.css';
 // import Loading from 'muse-ui-loading'
-import Toast from 'muse-ui-toast'
-import Message from 'muse-ui-message'
-import NProgress from 'muse-ui-progress'
-import axios from 'axios'
+import Toast from "muse-ui-toast"
+import Message from "muse-ui-message"
+import NProgress from "muse-ui-progress"
+import axios from "axios"
 
-import thor from 'thor-x'
-import 'thor-x/dist/index.css'
+import thor from "thor-x"
+import "thor-x/dist/index.css"
 // socket
-import VueSocketio from 'vue-socket.io'
+import VueSocketio from "vue-socket.io"
 
-import Chat from 'vue-beautiful-chat'
+import Chat from "vue-beautiful-chat"
 
-import MetaInfo from 'vue-meta-info'
+import MetaInfo from "vue-meta-info"
 Vue.use(MetaInfo)
 
-// axios.defaults.baseURL= "https://localhost:443/hid/";
-axios.defaults.baseURL = 'http://119.3.251.24/hid/'
+// axios.defaults.baseURL = "https://localhost:3000/hid/"
+axios.defaults.baseURL = "http://154.202.60.74:3000/hid/"
 const config = {
-  position: 'top', // 弹出的位置
-  close: true
+  position: "top", // 弹出的位置
+  close: true,
 }
 const config1 = {
   zIndex: 2000, // progress z-index
   top: 0, // position fixed top
   speed: 300, // progress speed
-  color: '#9c27b0', // color
+  color: "#9c27b0", // color
   size: 4, // progress size
-  position: 'absolute'
+  position: "absolute",
 }
 Vue.config.productionTip = false
 
 Vue.use(
   new VueSocketio({
     // debug: true,
-    connection: 'http://119.3.251.24'
+    connection: "http://154.202.60.74:3000",
+    // connection: "http://localhost:3000"
     // vuex: {
     //     store,
     //     actionPrefix: 'SOCKET_',
@@ -53,7 +54,7 @@ Vue.use(
 Vue.use(NProgress, config1)
 Vue.use(Chat)
 Vue.use(thor)
-// Vue.use(MuseUI)
+Vue.use(MuseUI)
 // Vue.use(Loading)
 Vue.use(Message)
 Vue.use(Toast, config)
@@ -63,5 +64,5 @@ window.bus = new Vue()
 new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app")
