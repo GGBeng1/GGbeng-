@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 const meta = {
-  requiresAuth: true
+  requiresAuth: true,
 }
 
 function getCookie(cookie_name) {
@@ -24,7 +24,7 @@ function getCookie(cookie_name) {
   return value
 }
 const router = new Router({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -36,67 +36,65 @@ const router = new Router({
           path: 'welcome',
           name: 'welcome',
           component: () =>
-            import(/* webpackChunkName: "welcome" */ './views/welcome.vue')
+            import(/* webpackChunkName: "welcome" */ './views/welcome.vue'),
         },
         {
           path: 'login',
           name: 'login',
           component: () =>
-            import(/* webpackChunkName: "login" */ './views/login.vue')
+            import(/* webpackChunkName: "login" */ './views/login.vue'),
         },
         {
           path: 'register',
           name: 'register',
           component: () =>
-            import(/* webpackChunkName: "register" */ './views/register.vue')
+            import(/* webpackChunkName: "register" */ './views/register.vue'),
         },
         {
           path: 'bug',
           name: 'bug',
           meta,
           component: () =>
-            import(/* webpackChunkName: "bug" */ './views/chat.vue')
+            import(/* webpackChunkName: "bug" */ './views/chat.vue'),
         },
         {
           path: 'myspace',
           name: 'myspace',
           meta,
           component: () =>
-            import(/* webpackChunkName: "myspace" */ './views/myspace.vue')
+            import(/* webpackChunkName: "myspace" */ './views/myspace.vue'),
         },
         {
           path: 'repassword',
           name: 'repassword',
           meta,
           component: () =>
-            import(
-              /* webpackChunkName: "repassword" */ './views/repassword.vue'
-            )
-        }
-      ]
+            import(/* webpackChunkName: "repassword" */ './views/repassword.vue'),
+        },
+      ],
     },
     {
       path: '/about',
       name: 'about',
       component: () =>
-        import(/* webpackChunkName: "about" */ './views/About.vue')
+        import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
       path: '/qrCode',
       name: 'qrCode',
       component: () =>
-        import(/* webpackChunkName: "qrCode" */ './views/qrCode.vue')
-    }
-  ]
+        import(/* webpackChunkName: "qrCode" */ './views/qrCode.vue'),
+    },
+  ],
 })
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
     // this route requires auth, check if logged in
     // if not, redirect to login page.
     let msg = getCookie('user')
     if (!msg) {
       next({
-        path: '/home/login'
+        path: '/home/login',
       })
     } else {
       next()

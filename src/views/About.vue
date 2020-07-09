@@ -12,12 +12,16 @@
           >更新日志</a
         >
         <a href="https://github.com/GGBeng1/GGbengUI">
-          <svg class="icon" aria-hidden="true" style="height: 17px;width:17px">
+          <svg
+            class="icon"
+            aria-hidden="true"
+            style="height: 17px; width: 17px;"
+          >
             <use xlink:href="#icon-github-fill"></use></svg
           >GitHub
         </a>
         <a href="#" @click="showLogin">bug提交</a>
-        <a href="http://info.ggbeng.site">博客</a>
+        <a href="http://blog.ggbeng.xyz">博客</a>
         <a href="#" @click="showQrCodeDialog">二维码转换</a>
         <!-- <router-link to="/qrCode" tag="a">二维码转换</router-link> -->
       </div>
@@ -39,7 +43,7 @@
           >Done</mu-button
         >
       </mu-appbar>
-      <div style="padding: 24px;padding-top: 120px">
+      <div style="padding: 24px; padding-top: 120px;">
         <mu-container>
           <mu-card style="width: 100%; max-width: 750px; margin: 0 auto;">
             <mu-card-header title="GGbeng" sub-title="cmz">
@@ -54,15 +58,15 @@
               <br />ggbeng-ui近期会有大动作，pc端和移动端的分离，小程序端的开发，更多的组件。
               <br />自始至终，ggbeng-UI的开发都是我一个人，难免有些纰漏，希望开发者面对BUG不要紧张，只需提交即可，我会在最快的时间内回复。
               <br />
-              <span style="color:orangered">提交规范：</span>
+              <span style="color: orangered;">提交规范：</span>
               <br />
-              <span style="color:orangered">
+              <span style="color: orangered;">
                 bug场景+组件名+相应部分源码/或者上传
                 <span style="color: #000;">.zip</span>文件不大于
                 <span style="color: #000;">800kb</span>！
               </span>
               <br />
-              <span style="color:orangered">
+              <span style="color: orangered;">
                 上传文件务必压缩为
                 <span style="color: #000;">.zip</span
                 >的文件，将场景及报错截图，源码放入即可
@@ -112,112 +116,112 @@
   </div>
 </template>
 <script>
-import ball from "../components/tools/threeball.vue";
-import "../../public/icon/iconfont.js";
-import qrcode from "./qrCode";
+import ball from '../components/tools/threeball.vue'
+import '../../public/icon/iconfont.js'
+import qrcode from './qrCode'
 export default {
   metaInfo: {
-    title: "GGbeng-UI", // set a title
+    title: 'GGbeng-UI', // set a title
     meta: [
       {
         // set meta
-        name: "GGbeng-UI",
+        name: 'GGbeng-UI',
         content:
-          "ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng"
-      }
-    ]
+          'ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng,ggbeng-ui,bbeng,GGbeng',
+      },
+    ],
   },
   components: {
     ball,
-    qrcode
+    qrcode,
   },
   data() {
     return {
       showQrCode: false,
-      placeholder: "写点啥，老铁",
+      placeholder: '写点啥，老铁',
       connected: false,
       openFullscreen: false,
       participants: [
         {
-          id: "user1",
-          name: "GGbeng",
-          imageUrl: "http://localhost:3000/g.png"
+          id: 'user1',
+          name: 'GGbeng',
+          imageUrl: 'http://localhost:3000/g.png',
         },
         {
-          id: "me",
-          name: "You",
-          imageUrl: "http://localhost:3000/you.png"
-        }
+          id: 'me',
+          name: 'You',
+          imageUrl: 'http://localhost:3000/you.png',
+        },
       ], // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
-      titleImageUrl: "http://localhost:3000/ggbeng.png",
+      titleImageUrl: 'http://localhost:3000/ggbeng.png',
       messageList: [
         // { type: 'text', author: `me`, data: { text: `Say yes!` } },
       ], // the list of the messages to show, can be paginated and adjusted dynamically
       newMessagesCount: 0,
       isChatOpen: false, // to determine whether the chat window should be open or closed
-      showTypingIndicator: "", // when set to a value matching the participant.id it shows the typing indicator for the specific user
+      showTypingIndicator: '', // when set to a value matching the participant.id it shows the typing indicator for the specific user
       colors: {
         header: {
-          bg: "#4e8cff",
-          text: "#ffffff"
+          bg: '#4e8cff',
+          text: '#ffffff',
         },
         launcher: {
-          bg: "#4e8cff"
+          bg: '#4e8cff',
         },
         messageList: {
-          bg: "#ffffff"
+          bg: '#ffffff',
         },
         sentMessage: {
-          bg: "#4e8cff",
-          text: "#ffffff"
+          bg: '#4e8cff',
+          text: '#ffffff',
         },
         receivedMessage: {
-          bg: "#eaeaea",
-          text: "#222222"
+          bg: '#eaeaea',
+          text: '#222222',
         },
         userInput: {
-          bg: "#f4f7f9",
-          text: "#565867"
-        }
+          bg: '#f4f7f9',
+          text: '#565867',
+        },
       }, // specifies the color scheme for the component
       alwaysScrollToBottom: true, // when set to true always scrolls the chat to the bottom when new events are in (new message, user starts typing...)
       messageStyling: true, // enables *bold* /emph/ _underline_ and such (more info at github.com/mattezza/msgdown)
-      msg: {}
-    };
+      msg: {},
+    }
   },
   methods: {
     showLogin() {
-      this.openFullscreen = true;
+      this.openFullscreen = true
     },
     showQrCodeDialog() {
-      this.showQrCode = true;
+      this.showQrCode = true
     },
     closeFullscreenDialog() {
-      this.openFullscreen = false;
-      this.showQrCode = false;
+      this.openFullscreen = false
+      this.showQrCode = false
     },
     sendMessage(data) {
       // console.log(data)
-      this.showTypingIndicator = "";
+      this.showTypingIndicator = ''
       if (data.text) {
         // console.log(123)
         this.newMessagesCount = this.isChatOpen
           ? this.newMessagesCount
-          : this.newMessagesCount + 1;
+          : this.newMessagesCount + 1
         this.onMessageWasSent(
-          { author: "user1", type: "text", data: data },
+          { author: 'user1', type: 'text', data: data },
           true
-        );
+        )
       } else if (data.emoji) {
         // console.log(data)
         this.onMessageWasSent(
           {
-            author: "user1",
-            type: "emoji",
-            data: data
+            author: 'user1',
+            type: 'emoji',
+            data: data,
           },
           true
-        );
+        )
       } else if (data.file) {
         // let s = this.toBuffer(data.file);
         // console.log(s)
@@ -229,84 +233,84 @@ export default {
       // message.author = "user2"
       if (!isSend) {
         // console.log(message)
-        this.$socket.emit("messages", message);
-        this.messageList = [...this.messageList, message];
+        this.$socket.emit('messages', message)
+        this.messageList = [...this.messageList, message]
       } else if (isSend) {
-        this.messageList = [...this.messageList, message];
+        this.messageList = [...this.messageList, message]
       }
       // console.log(this.messageList)
     },
     load(message) {
-      this.$socket.emit("messages", message);
+      this.$socket.emit('messages', message)
     },
     toBuffer(ab) {
-      let buf = new Buffer(ab.byteLength);
-      let view = new Uint8Array(ab);
+      let buf = new Buffer(ab.byteLength)
+      let view = new Uint8Array(ab)
       for (let i = 0; i < buf.length; ++i) {
-        buf[i] = view[i];
+        buf[i] = view[i]
       }
-      return buf;
+      return buf
     },
     openChat() {
       // called when the user clicks on the fab button to open the chat
-      this.isChatOpen = true;
-      this.newMessagesCount = 0;
+      this.isChatOpen = true
+      this.newMessagesCount = 0
     },
     closeChat() {
       // called when the user clicks on the botton to close the chat
-      this.isChatOpen = false;
-    }
+      this.isChatOpen = false
+    },
   },
   sockets: {
-    connect: function() {
-      console.log("socket connected");
-      this.connected = true;
+    connect: function () {
+      console.log('socket connected')
+      this.connected = true
     },
-    messages: function(data) {
+    messages: function (data) {
       // console.log(data);
-      this.sendMessage(data);
-    }
+      this.sendMessage(data)
+    },
   },
   mounted() {
-    this.showTypingIndicator = "1";
-    let contents = document.getElementById("contents");
-    contents.style.height = window.innerHeight + "px";
+    this.showTypingIndicator = '1'
+    let contents = document.getElementById('contents')
+    contents.style.height = window.innerHeight + 'px'
     setTimeout(() => {
       let obj = {
-        type: "load",
-        author: "me",
+        type: 'load',
+        author: 'me',
         data: {
-          text: `hi,请提交符合规范的bug内容`
-        }
-      };
-      this.load(obj);
-    }, 3000);
+          text: `hi,请提交符合规范的bug内容`,
+        },
+      }
+      this.load(obj)
+    }, 3000)
   },
   created() {
-    this.$on("zip", () => {
-      console.log("zip");
-    });
+    this.$on('zip', () => {
+      console.log('zip')
+    })
   },
   watch: {
     isChatOpen(val) {
       if (val) {
-        this.showTypingIndicator = "1";
+        this.showTypingIndicator = '1'
         setTimeout(() => {
           let obj = {
-            type: "load",
-            author: "me",
+            type: 'load',
+            author: 'me',
             data: {
-              text: `hi,当你看见此条内容说明我不在线,请务必提交后留下邮箱.`
-            }
-          };
-          this.load(obj);
-        }, 1500);
+              text: `hi,当你看见此条内容说明我不在线,请务必提交后留下邮箱.`,
+            },
+          }
+          this.load(obj)
+        }, 1500)
       }
-    }
-  }
-};
+    },
+  },
+}
 </script>
-<style lang='scss'>
+<style lang="scss">
 .admin {
   box-sizing: border-box;
   height: 100%;
@@ -381,7 +385,7 @@ export default {
         width: 100%;
         height: 2px;
         background: #fff;
-        content: "";
+        content: '';
         opacity: 0;
         transition: opacity 0.3s, -webkit-transform 0.3s;
         transition: opacity 0.3s, transform 0.3s;
@@ -397,7 +401,7 @@ export default {
         width: 100%;
         height: 2px;
         background: #fff;
-        content: "";
+        content: '';
         opacity: 0;
         transition: opacity 0.3s, -webkit-transform 0.3s;
         transition: opacity 0.3s, transform 0.3s;
