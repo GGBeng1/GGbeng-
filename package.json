@@ -17,7 +17,7 @@
     "muse-ui-toast": "^0.3.0",
     "qrcodejs2": "^0.0.2",
     "thor-x": "^0.0.81",
-    "three": "^0.98.0",
+    "three": "^0.137.0",
     "typeface-roboto": "0.0.54",
     "vue": "^2.5.17",
     "vue-beautiful-chat": "^2.2.0",
